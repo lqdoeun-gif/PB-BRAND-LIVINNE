@@ -223,6 +223,141 @@
     .note__label { font-family: 'Montserrat'; font-size: 0.8rem; letter-spacing: 0.4em; color: rgba(255,255,255,0.4); margin-bottom: 25px; text-transform: uppercase; }
     .note__list { font-family: 'Noto Serif KR'; font-size: 1.1rem; font-weight: 300; line-height: 2; color: rgba(255,255,255,0.9); }
     .active .scent__name, .active .scent__desc, .active .note__grid { opacity: 1; transform: translateY(0); }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — 태블릿 (1024px 이하)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      /* 네비 도트 */
+      .nav-dots { right: 20px; gap: 22px; }
+      .dot-label { display: none; }
+
+      /* 섹션 헤드라인 */
+      .section-headline { font-size: 1.1rem; top: 36px; }
+
+      /* HERO */
+      .hero__logo { width: clamp(260px, 55vw, 480px); }
+      .hero__slogan { font-size: clamp(1.1rem, 2.5vw, 1.6rem); }
+
+      /* STORY */
+      .story__title-wrap { height: 90px; margin-bottom: 36px; }
+      .title-spread span, .title-condensed span { font-size: clamp(2.2rem, 6vw, 5rem); }
+      .story__body { font-size: 1rem; line-height: 2; }
+
+      /* TARGET */
+      .tg-step-view { width: 88vw; gap: 40px; }
+      .tg-step-view img { height: 380px; }
+      .tg-text-box h2 { font-size: 1.7rem; }
+      .tg-text-box p { font-size: 1rem; }
+      .map-container { width: 700px; height: 480px; }
+
+      /* IDENTITY */
+      .id-mood-grid { gap: 16px; height: 60vh; }
+      .id-elements-grid { gap: 40px; }
+      .id-color-list { height: 380px; }
+      .id-pattern-img-box { height: 380px; }
+      .id-logo-asset.wide, .id-logo-asset.symbol { width: clamp(160px, 30vw, 360px); }
+      .id-logo-all-wrap { gap: 28px; }
+
+      /* COLLECTION 카드 */
+      .lineup-container { gap: 24px; }
+      .product-card { padding: 28px; }
+      .product-card img { height: 260px; }
+      .product-card h3 { font-size: 1.35rem; }
+
+      /* SCENT */
+      .scent__name { font-size: clamp(2.2rem, 4vw, 3.5rem); }
+      .scent__desc { font-size: 1.1rem; }
+      .note__grid { gap: clamp(30px, 5vw, 70px); }
+
+      /* VOTE */
+      .vote__main { font-size: clamp(1.7rem, 3vw, 2.6rem); }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — 모바일 (768px 이하)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+      /* 네비 도트 숨김 — 모바일은 스와이프만 */
+      .nav-dots { display: none; }
+
+      /* 섹션 헤드라인 */
+      .section-headline { font-size: 0.75rem; top: 24px; left: 6vw; letter-spacing: 0.15em; }
+
+      /* HERO */
+      .hero__line-wrap { width: 82vw; }
+      .hero__slogan { font-size: clamp(0.95rem, 3.5vw, 1.3rem); letter-spacing: 0.25em; margin-bottom: 28px; }
+      .hero__logo { width: clamp(220px, 72vw, 360px); }
+      .hero__brand-kr { font-size: 0.9rem; letter-spacing: 0.4em; margin-top: 20px; }
+
+      /* STORY */
+      .story__title-wrap { height: 70px; margin-bottom: 28px; }
+      .title-spread span, .title-condensed span { font-size: clamp(1.8rem, 8vw, 3.2rem); }
+      .story__body { font-size: 0.9rem; line-height: 2; padding: 0 6vw; word-break: keep-all; }
+      .story__divider { margin-bottom: 28px; }
+
+      /* TARGET — 세로 레이아웃으로 전환 */
+      .tg-step-view { width: 90vw; grid-template-columns: 1fr; gap: 24px; padding: 0 4vw; }
+      .tg-step-view img { height: 240px; }
+      .tg-text-box h3 { font-size: 0.9rem; margin-bottom: 10px; }
+      .tg-text-box h2 { font-size: 1.35rem; margin-bottom: 16px; }
+      .tg-text-box p { font-size: 0.88rem; line-height: 1.8; }
+      /* 포지셔닝 맵: 모바일에서 스케일 축소 */
+      .map-container { width: 90vw; height: auto; aspect-ratio: 3/2; transform-origin: top center; }
+      .brand-chip { width: 44px; height: 44px; }
+      .chip-livinne { width: 80px; height: 80px; font-size: 0.6rem; }
+      .axis-label { font-size: 0.62rem; }
+      .label-classic { left: -60px; }
+      .label-trendy { right: -64px; }
+      .label-high { top: -32px; }
+      .label-low { bottom: -32px; }
+      .brand-chip .info { font-size: 0.55rem; bottom: -28px; }
+
+      /* IDENTITY */
+      .id-step { padding: 80px 5vw 40px; }
+      .id-header { height: auto; margin-bottom: 24px; }
+      .id-header h4 { font-size: 0.72rem; }
+      .id-header p { font-size: 0.78rem; }
+      /* 무드보드: 2열로 */
+      .id-mood-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; gap: 10px; height: 70vh; }
+      .md1 { grid-column: 1 / 2; grid-row: 1 / 3; }
+      .md2 { grid-column: 2 / 3; grid-row: 1 / 2; }
+      .md3 { grid-column: 1 / 3; grid-row: 3 / 4; }
+      .md4 { grid-column: 1 / 2; grid-row: 4 / 5; }
+      .md5 { grid-column: 2 / 3; grid-row: 2 / 4; }
+      /* 컬러+패턴: 세로 */
+      .id-elements-grid { grid-template-columns: 1fr; gap: 24px; }
+      .id-color-list { height: auto; gap: 8px; }
+      .id-color-bar { padding: 0 16px; min-height: 44px; font-size: 10px; }
+      .id-pattern-img-box { height: 220px; }
+      /* 로고 */
+      .id-logo-all-wrap { gap: 20px; padding: 10px 0; }
+      .id-logo-row { gap: 6px; }
+      .id-logo-label { font-size: 0.62rem; letter-spacing: 0.3em; }
+      .id-logo-asset.wide, .id-logo-asset.symbol { width: clamp(140px, 65vw, 300px); }
+
+      /* COLLECTION 카드: 세로 1열 + 가로 스크롤 대신 세로 나열 */
+      .lineup-container { grid-template-columns: 1fr; gap: 16px; width: 84vw; }
+      .product-card { padding: 20px; }
+      .product-card img { height: 200px; margin-bottom: 20px; }
+      .product-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+      .product-card p { font-size: 0.88rem; }
+      /* 카드 요약 세로 스크롤 허용 */
+      .product-summary-wrap { overflow-y: auto; justify-content: flex-start; padding: 80px 0 40px; }
+
+      /* SCENT */
+      .scent__intro h2 { font-size: 1.6rem; padding: 0 8vw; }
+      .scent__intro p { font-size: 0.95rem; padding: 0 8vw; }
+      .scent__name { font-size: clamp(1.8rem, 6vw, 2.8rem); }
+      .scent__desc { font-size: 1rem; margin-bottom: 36px; padding: 0 8vw; }
+      .note__grid { gap: 28px; flex-wrap: wrap; justify-content: center; }
+      .note__label { font-size: 0.72rem; margin-bottom: 16px; }
+      .note__list { font-size: 0.95rem; }
+
+      /* VOTE */
+      .vote__sub { font-size: clamp(0.78rem, 2.5vw, 1rem); letter-spacing: 0.2em; padding: 0 8vw; }
+      .vote__main { font-size: clamp(1.4rem, 5.5vw, 2rem); letter-spacing: 0.1em; padding: 0 6vw; word-break: keep-all; }
+    }
   </style>
 </head>
 <body class="on-dark">
@@ -284,35 +419,32 @@
     <div class="target__content">
 
       <!-- 페르소나 1~3단계 -->
-<div class="tg-step-view" id="tg-v1">
-  <img src="TARGET_01.jpg">
-  <div class="tg-text-box">
-    <h3>Persona 01. The Curator</h3>
-    <h2>공간의 큐레이터:<br/>독립된 삶을 완성하는 안목</h2>
-    <p>단순히 방을 꾸미는 것을 넘어, 자신의 취향을 공간에 투영합니다.<br>
-       가장 개인적인 장소인 '집'을 향기로 완성하는 25~34 홈 스타일러입니다.</p>
-  </div>
-</div>
+      <div class="tg-step-view" id="tg-v1">
+        <img src="TARGET_01.jpg">
+        <div class="tg-text-box">
+          <h3>Target 01</h3>
+          <h2>고감도 취향층:<br/>공간의 감도를 결정하는 사람들</h2>
+          <p>자신의 취향을 큐레이션하며 공간의 완성인 향기에 투자하는,<br>25-42세의 고감도 라이프스타일 소비자 집단입니다.</p>
+        </div>
+      </div>
 
-<div class="tg-step-view" id="tg-v2">
-  <img src="TARGET_02.jpg">
-  <div class="tg-text-box">
-    <h3>Persona 02. Memory Collector</h3>
-    <h2>기억의 수집가:<br/>추억을 소장하는 가장 감각적인 방법</h2>
-    <p>여행지의 공기, 소중한 찰나의 순간을 향기로 기록하고 싶어 합니다.<br>
-       '추억'과 '경험'이 주는 가치를 위해 기꺼이 지갑을 여는 소비층입니다.</p>
-  </div>
-</div>
+      <div class="tg-step-view" id="tg-v2">
+        <img src="TARGET_02.jpg">
+        <div class="tg-text-box">
+          <h3>Target 02</h3>
+          <h2>스몰 럭셔리:<br/>취향을 소장하는 세련된 방식</h2>
+          <p>거창한 변화 대신 감각적인 향기로 일상의 분위기를 전환하는,<br>'셀프 케어' 문화를 선도하는 층을 공략합니다.</p>
+        </div>
+      </div>
 
-<div class="tg-step-view" id="tg-v3">
-  <img src="TARGET_03.jpg">
-  <div class="tg-text-box">
-    <h3>Persona 03. Sincere Gift</h3>
-    <h2>다정한 전달자:<br/>마음을 잇는 가장 특별한 축사</h2>
-    <p>지인의 독립, 친구의 결혼 등 새로운 시작을 진심으로 축하합니다.<br>
-       뻔한 선물 대신 '독보적인 감각'으로 기억되고 싶은 선물 수요층입니다.</p>
-  </div>
-</div>
+      <div class="tg-step-view" id="tg-v3">
+        <img src="TARGET_03.jpg">
+        <div class="tg-text-box">
+          <h3>Target 03</h3>
+          <h2>프리미엄 기프트:<br/>실패 없는 독보적인 선물</h2>
+          <p>집들이, 결혼 등 소중한 시작을 축하하기 위해<br>가장 감각적인 선택지를 찾는<br>프리미엄 기프트 수요층에게 가치를 전달합니다.</p>
+        </div>
+      </div>
 
       <!-- 포지셔닝 맵 (4~5단계) -->
       <div class="map-container">
@@ -433,7 +565,7 @@
       <div class="lineup-container">
         <div class="product-card"><img src="PRODUCT_01.jpg"><h3>Diffuser 100ml</h3><p>나만의 밀도 있는 공간을 위한<br>가장 합리적인 럭셔리의 시작</p></div>
         <div class="product-card"><img src="PRODUCT_02.jpg"><h3>Diffuser 200ml</h3><p>공간의 첫인상을 결정하는<br>리빈느 시그니처 대용량 디퓨저</p></div>
-        <div class="product-card"><img src="PRODUCT_03.jpg"><h3>Room Spray 50ml</h3><p>언제 어디서든 즉각적으로<br>분위기를 전환하는 프래그런스</p></div>
+        <div class="product-card"><img src="PRODUCT_03.jpg"><h3>Room Spray Mini</h3><p>언제 어디서든 즉각적으로<br>분위기를 전환하는 프래그런스</p></div>
       </div>
     </div>
   </section>
@@ -512,7 +644,7 @@
   window.addEventListener('touchend', (e) => {
     if (isAnimating) return;
     const delta = touchStartY - e.changedTouches[0].clientY;
-    if (Math.abs(delta) > 30) { delta > 0 ? handleNext() : handlePrev(); }
+    if (Math.abs(delta) > 50) { delta > 0 ? handleNext() : handlePrev(); }
   }, { passive: true });
 
   function handleNext() {
